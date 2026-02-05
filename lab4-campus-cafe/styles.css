@@ -1,3 +1,4 @@
+/* Color palette + radius */
 :root {
   --bg: #f7f7f7;
   --panel: #ffffff;
@@ -8,8 +9,12 @@
   --radius: 16px;
 }
 
-* { box-sizing: border-box; }
+/* Reset box sizing */
+* {
+  box-sizing: border-box;
+}
 
+/* Base body styles */
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
@@ -17,6 +22,7 @@ body {
   color: var(--text);
 }
 
+/* 12-column grid container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -26,6 +32,7 @@ body {
   gap: 16px;
 }
 
+/* Shared panel styling */
 .panel {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -33,20 +40,28 @@ body {
   padding: 16px;
 }
 
+/* Mobile-first: every panel spans full width */
 .container > * {
   grid-column: 1 / -1;
 }
 
-/* Desktop layout */
+/* Desktop layout: place panels into 12-column grid */
 @media (min-width: 768px) {
-  .head { grid-column: 1 / 13; }
-  .nav { grid-column: 1 / 3; }
-  .content { grid-column: 3 / 11; }
-  .sidebar { grid-column: 11 / 13; grid-row: 2; }
-  .ads { grid-column: 11 / 13; grid-row: 3; }
-  .footer { grid-column: 1 / 13; }
+  .head { grid-column: 1 / 13; }      /* header: full width */
+  .nav { grid-column: 1 / 3; }        /* nav: 2 columns left */
+  .content { grid-column: 3 / 11; }   /* main content: 8 columns center */
+  .sidebar {                          /* receipt: 2 columns right, row 2 */
+    grid-column: 11 / 13;
+    grid-row: 2;
+  }
+  .ads {                              /* weather: 2 columns right, row 3 */
+    grid-column: 11 / 13;
+    grid-row: 3;
+  }
+  .footer { grid-column: 1 / 13; }    /* footer: full width */
 }
 
+/* Banner image styling */
 .head img {
   width: 100%;
   height: 220px;
@@ -56,22 +71,26 @@ body {
   margin-top: 10px;
 }
 
-.muted { color: var(--muted); }
+/* Muted text helper */
+.muted {
+  color: var(--muted);
+}
 
-/* Menu grid */
+/* Nested menu grid: cards layout */
 .menu-grid {
   display: grid;
   gap: 12px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* mobile: 1 column */
 }
 
-/* Desktop: 3 columns */
+/* Larger screens: 3 menu columns */
 @media (min-width: 900px) {
   .menu-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* Menu cards */
 article {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -79,11 +98,13 @@ article {
   background: #fff;
 }
 
+/* Price highlight */
 .price {
   font-weight: 900;
   color: var(--accent);
 }
 
+/* Button row */
 .actions {
   margin-top: 12px;
   display: flex;
@@ -91,6 +112,7 @@ article {
   flex-wrap: wrap;
 }
 
+/* Buttons */
 button {
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -100,12 +122,14 @@ button {
   background: #fff;
 }
 
+/* Primary button */
 #calcBtn {
   background: var(--accent);
   color: #fff;
   border-color: rgba(0,0,0,0.2);
 }
 
+/* Receipt box */
 pre {
   white-space: pre-wrap;
   background: rgba(15,23,42,0.03);
@@ -116,6 +140,7 @@ pre {
   font-family: ui-monospace, monospace;
 }
 
+/* Weather box */
 .weather {
   background: rgba(22,163,74,0.08);
   border: 1px solid rgba(22,163,74,0.18);

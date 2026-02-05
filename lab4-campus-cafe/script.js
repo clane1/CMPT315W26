@@ -1,3 +1,4 @@
+// Base prices and constants
 const PRICES = { coffee: 3.25, sandwich: 8.50, salad: 7.25 };
 const TAX_RATE = 0.05;
 const STUDENT_RATE = 0.10;
@@ -5,27 +6,34 @@ const ECO_FEE = 1.00;
 const BULK_QTY = 6;
 const BULK_OFF = 2.00;
 
+// Format a number as $X.XX
 function money(n) {
   return `$${n.toFixed(2)}`;
 }
 
+// Normalize user input: handle cancel/empty, trim, lowercase
 function normalizeType(raw) {
   if (!raw) return "";
   return raw.trim().toLowerCase();
 }
 
+// Only allow the three valid item types
 function isValidType(t) {
   return t === "coffee" || t === "sandwich" || t === "salad";
 }
 
+// Build an icon line (max 10 icons) based on type and quantity
 function iconsFor(type, qty) {
   const map = { coffee: "☕", sandwich: "🥪", salad: "🥗" };
   const cap = Math.min(qty, 10);
   let line = "";
-  for (let i = 0; i < cap; i++) line += map[type];
+  for (let i = 0; i < cap; i++) {
+    line += map[type];
+  }
   return line;
 }
 
+// Core math for the quote: returns an object with all values
 function processQuote(type, qty, isStudent, ecoCup) {
   const unitPrice = PRICES[type];
   const subtotal = unitPrice * qty;
@@ -41,6 +49,7 @@ function processQuote(type, qty, isStudent, ecoCup) {
   return { unitPrice, subtotal, studentDiscount, ecoFee, bulkDiscount, tax, total };
 }
 
+// Build the multi-line receipt string using template literals
 function buildReceipt(type, qty, isStudent, ecoCup, calc) {
   const icons = iconsFor(type, qty);
   const studentText = isStudent ? "Yes" : "No";
@@ -65,14 +74,17 @@ TOTAL: ${money(calc.total)}
 `;
 }
 
+// Show an error message in the receipt panel
 function showError(msg) {
   document.getElementById("display").textContent = `ERROR:\n${msg}`;
 }
 
+// Reset the receipt panel to default text
 function resetUI() {
   document.getElementById("display").textContent = "No order data.";
 }
 
+// Load Edmonton weather using Open-Meteo API
 async function loadWeather() {
   const box = document.getElementById("weatherBox");
   const url =
@@ -92,33 +104,43 @@ async function loadWeather() {
   }
 }
 
+// Main entry point: wire up events and initialize UI
 function main() {
   loadWeather();
   resetUI();
 
+  // Handle Get Quote button
   document.getElementById("calcBtn").addEventListener("click", () => {
     const type = normalizeType(prompt("Enter item type: coffee / sandwich / salad"));
     const qty = Number(prompt("Enter quantity (1-10):"));
 
+    // Validate item type
     if (!isValidType(type)) {
       showError("Item must be coffee, sandwich, or salad.");
       return;
     }
 
+    // Validate quantity: integer 1–10
     if (!Number.isInteger(qty) || qty < 1 || qty > 10) {
       showError("Quantity must be an integer between 1 and 10.");
       return;
     }
 
+    // Ask for student discount
     const isStudent = confirm("Student discount? (10% off)");
+
+    // Ask for eco cup only if coffee
     const ecoCup = (type === "coffee") ? confirm("Add reusable cup? (+$1.00)") : false;
 
+    // Compute quote and show receipt
     const calc = processQuote(type, qty, isStudent, ecoCup);
     document.getElementById("display").textContent =
       buildReceipt(type, qty, isStudent, ecoCup, calc);
   });
 
+  // Handle Reset button
   document.getElementById("resetBtn").addEventListener("click", resetUI);
 }
 
+// Run main when script loads
 main();
