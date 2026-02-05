@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Campus Café</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Campus Café | Quote Dashboard</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <h1>Campus Café</h1>
-    <p class="tagline">Fresh coffee, quick bites, and a cozy spot on campus.</p>
-  </header>
+<div class="container">
 
-  <nav class="main-nav">
-    <ul>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#specials">Daily Specials</a></li>
-      <li><a href="#hours">Hours & Location</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header class="head panel">
+  <h1>Campus Café</h1>
+  <p class="muted">Quote Dashboard · Chapter 8 JavaScript + 12‑column CSS Grid</p>
 
-  <main class="layout">
-    <section id="menu" class="card">
-      <h2>Menu Highlights</h2>
-      <ul>
-        <li><strong>Latte</strong> – Espresso with steamed milk</li>
-        <li><strong>Cold Brew</strong> – Slow-steeped, smooth coffee</li>
-        <li><strong>Breakfast Sandwich</strong> – Egg, cheese, and your choice of protein</li>
-        <li><strong>Veggie Wrap</strong> – Roasted veggies with hummus</li>
-      </ul>
-    </section>
+  <!-- Replace banner.jpg with your own image -->
+  <img src="img/banner.jpg" alt="Coffee banner">
+  <p class="muted">Banner photo: Unsplash (add attribution)</p>
+</header>
 
-    <section id="specials" class="card">
-      <h2>Daily Specials</h2>
-      <p><strong>Monday:</strong> $1 off any pastry with coffee</p>
-      <p><strong>Wednesday:</strong> Buy one latte, get the second half price</p>
-      <p><strong>Friday:</strong> Free cookie with any sandwich</p>
-    </section>
+<nav class="nav panel">
+  <h2>Sections</h2>
+  <ul>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#quote">Get Quote</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
 
-    <section id="hours" class="card">
-      <h2>Hours & Location</h2>
-      <p><strong>Location:</strong> Main Campus, Student Centre – 1st Floor</p>
-      <p><strong>Hours:</strong></p>
-      <ul>
-        <li>Mon–Thu: 7:30am – 7:00pm</li>
-        <li>Fri: 7:30am – 5:00pm</li>
-        <li>Sat–Sun: Closed</li>
-      </ul>
-    </section>
+<main class="content panel">
+  <section id="menu">
+    <h2>Menu</h2>
+    <p class="muted">Display cards only. Inputs are collected using dialogs.</p>
 
-    <section id="contact" class="card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:campuscafe@example.com">campuscafe@example.com</a></p>
-      <p>Phone: (555) 123‑4567</p>
-    </section>
-  </main>
+    <div class="menu-grid">
+      <article>
+        <h3>Coffee</h3>
+        <p>Freshly brewed premium roast.</p>
+        <p class="price">$3.25</p>
+      </article>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Campus Café. All rights reserved.</p>
-  </footer>
+      <article>
+        <h3>Sandwich</h3>
+        <p>Made‑to‑order with fresh ingredients.</p>
+        <p class="price">$8.50</p>
+      </article>
+
+      <article>
+        <h3>Salad</h3>
+        <p>Crisp greens with house dressing.</p>
+        <p class="price">$7.25</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="quote" style="margin-top:18px;">
+    <h2>Get a Quote</h2>
+    <p class="muted">Click Get Quote and enter values in dialogs.</p>
+
+    <div class="actions">
+      <button id="calcBtn" type="button">Get Quote</button>
+      <button id="resetBtn" type="button">Reset</button>
+    </div>
+  </section>
+
+  <section id="about" style="margin-top:18px;">
+    <h2>About</h2>
+    <p>Campus Café provides quick, affordable meals for students on the go.</p>
+    <p>Our dashboard helps you estimate your order cost before visiting.</p>
+  </section>
+</main>
+
+<aside class="sidebar panel">
+  <h3>Receipt</h3>
+  <pre id="display">No order data.</pre>
+</aside>
+
+<aside class="ads panel">
+  <h3>Local Weather</h3>
+  <div id="weatherBox" class="weather">Loading weather...</div>
+</aside>
+
+<footer class="footer panel">
+  <p>&copy; 2026 Campus Café</p>
+  <p class="muted">Weather data by Open‑Meteo (CC BY 4.0)</p>
+  <p class="muted">Banner photo attribution here.</p>
+</footer>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
-
