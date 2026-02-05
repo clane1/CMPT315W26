@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Downtown Pizzeria | Order</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <header>
+  <h1>Downtown Pizzeria – Online Order Form</h1>
+</header>
+
+  <!-- 
+    MAIN PAGE STRUCTURE
+    Column 1: Form
+    The <main> element contains exactly two children:
+      1) <form> — the entire ordering form
+      2) <aside> — the static order summary table
+    This is required for the CSS Grid layout.
+  -->
+  <main>
+
+    <!-- Column 1: Form -->
+    <form action="#" method="post">
+      <!-- fieldsets will go here -->
+
+      <!-- ============================
+           FIELDSET 1 — CUSTOMER INFO
+           ============================ -->
+      <fieldset>
+        <legend>Customer Information</legend>
+
+        <!-- 
+          form-grid:
+          This grid aligns labels and inputs in two columns.
+        -->
+        <div class="form-grid">
+
+          <label for="cust-name">Name:</label>
+          <input type="text" id="cust-name" name="cust-name" required minlength="2" />
+
+          <label for="cust-address">Address:</label>
+          <input type="text" id="cust-address" name="cust-address" required />
+
+          <label for="cust-phone">Phone:</label>
+          <input
+            type="tel"
+            id="cust-phone"
+            name="cust-phone"
+            required
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            placeholder="123-456-7890"
+          />
+
+        </div>
+      </fieldset>
+
+      <!-- ============================
+           FIELDSET 2 — ORDER DETAILS
+           ============================ -->
+      <fieldset>
+        <legend>The Order</legend>
+
+        <div class="form-grid">
+
+          <!-- Crust (radios) -->
+          <!-- Radios must be grouped in a flex container -->
+          <label>Crust:</label>
+          <div class="option-row">
+            <label><input type="radio" name="crust" value="thin" required /> Thin</label>
+            <label><input type="radio" name="crust" value="classic" /> Classic</label>
+            <label><input type="radio" name="crust" value="deep" /> Deep Dish</label>
+          </div>
+
+          <!-- Toppings (checkboxes) -->
+          <!-- Flex-wrap allows natural wrapping on small screens -->
+          <label>Toppings:</label>
+          <div class="option-wrap">
+            <label><input type="checkbox" name="toppings" value="pepperoni" /> Pepperoni</label>
+            <label><input type="checkbox" name="toppings" value="mushroom" /> Mushrooms</label>
+            <label><input type="checkbox" name="toppings" value="olives" /> Olives</label>
+            <label><input type="checkbox" name="toppings" value="peppers" /> Green peppers</label>
+          </div>
+
+          <!-- Quantity -->
+          <label for="quantity">Quantity:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            required
+            min="1"
+            max="10"
+            value="1"
+          />
+
+        </div>
+      </fieldset>
+
+      <!-- ============================
+           FIELDSET 3 — DELIVERY + PAYMENT
+           ============================ -->
+      <fieldset>
+        <legend>Delivery and Payment</legend>
+
+        <div class="form-grid">
+
+          <!-- Delivery instructions -->
+          <label for="instructions">Delivery instructions:</label>
+          <textarea id="instructions" name="instructions" rows="3"></textarea>
+
+          <!-- Date/time -->
+          <!-- datetime-local cannot use placeholder-shown -->
+          <label for="delivery-datetime">Preferred delivery date &amp; time:</label>
+          <input
+            type="datetime-local"
+            id="delivery-datetime"
+            name="delivery-datetime"
+            required
+          />
+
+          <!-- Payment method -->
+          <label for="payment">Payment method:</label>
+          <select id="payment" name="payment" required>
+            <option value="">-- Select --</option>
+            <option value="cash">Cash</option>
+            <option value="card">Card</option>
+            <option value="debit">Debit</option>
+          </select>
+
+        </div>
+
+        <!-- Buttons -->
+        <!-- Flexbox aligns buttons to the right -->
+        <div class="button-row">
+          <button type="submit">Place Order</button>
+          <button type="reset">Reset</button>
+        </div>
+
+      </fieldset>
+
+    </form>
+
+    <!-- ============================
+         ASIDE — ORDER SUMMARY TABLE
+         ============================ -->
+    <aside>
+      <h2>Order Summary (Example)</h2>
+
+      <!-- 
+        Table uses caption, thead, tbody, and scope="col"
+        for accessibility and screen reader support.
+      -->
+      <table>
+        <caption>Sample Order Summary</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Details</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Base pizza</td>
+            <td>Large (12"), Thin crust</td>
+            <td>$16.99</td>
+          </tr>
+          <tr>
+            <td>Toppings</td>
+            <td>Mushrooms, Olives, Extra cheese</td>
+            <td>$4.50</td>
+          </tr>
+          <tr>
+            <td>Delivery fee</td>
+            <td>Standard delivery</td>
+            <td>$3.99</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td></td>
+            <td><strong>$25.48</strong></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </aside>
+
+  </main>
+</body>
+</html>

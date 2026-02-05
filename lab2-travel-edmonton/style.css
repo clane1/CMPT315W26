@@ -1,0 +1,309 @@
+/* ---------------------------
+ style.css (Student Tasks Version)
+ Chapters 4 & 6: Selectors + Box Model + Variables
+ ---------------------------
+ HOW TO USE THIS FILE:
+ - Keep the selectors as they are (e.g., .site-nav a). Only add properties inside
+{ }.
+ - Use Chapter 6 variables with var(--name) whenever possible.
+ - Use the Box Model (padding, margin, border, border-radius) to create spacing
+and “button/card” looks.
+ - After each edit: Save → Refresh the browser.
+ DEBUG TIP (Chapter 4 cascade):
+ If a style does not apply, check:
+ 1) selector matches the HTML element
+ 2) you saved the file
+ 3) no typos (property names, missing semicolons)
+ 4) whether another rule overrides it (order/specificity)
+*/
+/* ---------------------------
+ Chapter 6: Variables (Design System)
+ You may keep these values or adjust them to create a different theme.
+ Typical values:
+ - colors in hex (#RRGGBB)
+ - common neutrals: light background, dark text
+ - one accent color used for highlights/hover
+ --------------------------- */
+:root {
+    --bg: #f4f4f9;
+    /* background color (light) */
+    --text: #222;
+    /* main text color (dark) */
+    --primary: #2c3e50;
+    /* header/nav background color */
+    --accent: #0A6C74;
+    /* highlight/hover color */
+    --white: #ffffff;
+    /* white */
+    --border: #ddd;
+    /* light border color */
+}
+
+/* Base styles (inheritance applies to many text properties)
+ You can adjust:
+ - font-family (Arial, Helvetica, sans-serif)
+ - line-height (e.g., 1.4 to 1.8)
+ - background and color using variables */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Centers page content and prevents text from stretching too wide
+ You can adjust:
+ - max-width (e.g., 900px to 1200px)
+ - padding (e.g., 16px to 32px) */
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header “banner”
+ You can adjust:
+ - padding (e.g., 16px–28px)
+ - border-radius (e.g., 8px–16px)
+ - background using var(--primary) */
+.site-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* ---------------------------
+ Chapter 4: Descendant selectors
+ The UL is styled only inside .site-nav so other lists are unaffected.
+ Typical values:
+ - list-style: none; removes bullets
+ - text-align: center; centers the menu
+ --------------------------- */
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Each LI controls positioning of each menu item.
+ Typical values:
+ - display: inline-block; puts items side-by-side
+ - margin: small horizontal spacing like 4px–12px */
+.site-nav li {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+/* TODO (CSS #1): Nav links as buttons
+ Target: .site-nav a (the clickable element)
+ You should define properties to make links look like buttons:
+ - text color: usually var(--white)
+ - remove underline: text-decoration (often 'none')
+ - padding: increases clickable area (common: vertical 8–12px, horizontal 12–22px)
+ - display: use inline-block so padding/background behave like a “button”
+ - border-radius: rounding (common: 4px–12px; or 999px for pill style)
+ - transition: smooth hover effect (often background-color 0.2s–0.3s)
+ Optional additions:
+ - background for non-hover state (transparent or subtle)
+ - font-weight (normal/bold)
+*/
+.site-nav a {
+    /* add properties here */
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 18px;
+    display: inline-block;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+/* TODO (CSS #2): Hover effect
+ Target: .site-nav a:hover
+ You should define what changes when the mouse hovers:
+ - background color: commonly var(--accent)
+ - optionally adjust text color (if contrast becomes poor)
+ - optionally change underline/border effect instead of background (design choice)
+*/
+.site-nav a:hover {
+    /* add properties here */
+    background: var(--accent);
+}
+
+/* TODO (CSS #3): Active link highlight
+ Target: .site-nav a.active
+ This should make the current page link look “selected.”
+ Common approaches (choose one):
+ - subtle background (semi-transparent white)
+ - underline or border-bottom
+ - slightly different text color
+ - stronger font-weight
+ Keep it visually consistent with your hover style.
+*/
+.site-nav a.active {
+    /* add properties here */
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Two-column layout (Flexbox)
+ You may keep this as-is or modify later in the Design Studio.
+ Typical values:
+ - gap: 12px–28px */
+.layout {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.main {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+/* TODO (CSS #4): Sidebar card look
+ Target: .sidebar
+ Goal: Make the sidebar area look like a clean panel.
+ Typical properties:
+ - background: var(--white)
+ - padding: 12px–20px
+ - border: 1px solid var(--border)
+ - border-radius: 8px–16px
+ Optional:
+ - slightly different background (very light tint)
+*/
+.sidebar {
+    /* add properties here */
+    background: var(--white);
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+/* TODO (CSS #5): Card styling (Box Model)
+ Target: .card
+ Goal: Make every card look like a readable block.
+ Typical properties:
+ - background: var(--white)
+ - padding: 14px–20px
+ - margin-bottom: 12px–18px
+ - border: 1px solid var(--border)
+ - border-radius: 8px–16px
+ Optional:
+ - box-shadow for depth (subtle; do not overdo)
+*/
+.card {
+    /* add properties here */
+    background: var(--white);
+    padding: 16px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+/* TODO (CSS #6): Meta line
+ Target: .meta
+ Goal: Smaller, less prominent text than body content.
+ Typical properties:
+ - font-size: around 0.85rem–0.95rem
+ - color: a muted grey (e.g., #666 or #777)
+ - margin-bottom: 6px–12px
+*/
+.meta {
+    /* add properties here */
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* TODO (CSS #7): Tag “pill” styling
+ Target: .tag
+ Goal: Tags should look like pill labels.
+ Typical properties:
+ - display: inline-block
+ - padding: small (vertical 4–7px, horizontal 10–16px)
+ - margin: small spacing between tags
+ - border: 1px solid (often #ccc or var(--border))
+ - border-radius: very large (e.g., 999px) for pill shape
+ Optional:
+ - background: white or very light tint
+ - text color: var(--primary) or var(--text)
+*/
+.tag {
+    /* add properties here */
+    display: inline-block;
+    padding: 4px 12px;
+    margin-right: 6px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--primary);
+}
+
+/* TODO (CSS #8): Video container
+ Target: .video-wrap
+ Goal: The iframe should appear inside a neat frame with rounded corners.
+ Typical properties:
+ - border: 1px solid var(--border)
+ - border-radius: 8px–16px
+ - overflow: hidden (important for rounded corners)
+ - background: #000 (prevents white gaps around the video)
+*/
+.video-wrap {
+    /* add properties here */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrap iframe {
+    width: 100%;
+    height: 420px;
+    border: 0;
+    display: block;
+}
+
+/* ID selector example: styles ONLY the element with id="featured-video"
+ Use this to emphasize the featured section (more specific than .card). */
+#featured-video {
+    /* Examples of what you CAN define here:
+ - a different border style (solid/dashed)
+ - a thicker border width
+ - extra padding or margin
+ - a subtle background tint
+ - a stronger border-left accent
+ */
+}
+
+/* TODO (CSS #9): Notice styling
+ Target: .notice
+ Goal: Make instruction boxes stand out.
+ Typical properties:
+ - border: dashed (e.g., 1px dashed #bbb)
+ - padding: 10px–14px
+ - border-radius: 8px–16px
+ Optional:
+ - background: white or a very light tint
+ - slightly muted text color
+*/
+.notice {
+    /* add properties here */
+    border: 1px dashed #bbb;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--white);
+    color: #555;
+}
+
+/* Footer
+ You can adjust padding and color, but keep it readable. */
+.site-footer {
+    text-align: center;
+    padding: 18px 10px;
+    color: #555;
+}

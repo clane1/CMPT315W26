@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+    <!-- Responsive scaling for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edmonton Travel Blog | Home</title>
+    <!-- All pages share ONE stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Container centers the site and controls max-width -->
+    <div class="container">
+        <header class="site-header">
+            <h1>Edmonton Travel Blog</h1>
+            <p>Local highlights, short itineraries, and must-see spots in Edmonton.</p>
+            <!-- Navigation is a list; CSS will turn it into a nav bar -->
+            <nav class="site-nav">
+                <ul>
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="city.html">About the City</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Two-column layout: main content + sidebar -->
+        <main class="layout">
+            <section class="main">
+                <article class="card">
+                    <h2>River Valley Walk: Easy Views, Big Payoff</h2>
+                    <div class="meta">Best for: sunsets • Time: 60–90 minutes</div>
+                    <p>
+                        Edmonton’s river valley has long trails, viewpoints, and peaceful spots
+                        close to downtown.
+                        Start with a short loop and bring a warm layer—weather changes quickly.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Outdoors</span>
+                        <span class="tag">Scenic</span>
+                        <span class="tag">Beginner-friendly</span>
+                    </div>
+                </article>
+                <article class="card">
+                    <h2>Whyte Avenue Evening: Food, Shops, and People-Watching</h2>
+                    <div class="meta">Best for: cafes • Time: 2–3 hours</div>
+                    <p>
+                        Whyte Avenue is a classic for browsing local shops and finding great
+                        food.
+                        Pick one dessert place, one dinner spot, and walk the strip.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Food</span>
+                        <span class="tag">Local</span>
+                        <span class="tag">Night out</span>
+                    </div>
+                </article>
+                <!-- TODO (HTML #1):
+ Add ONE more blog post as <article class="card"> with:
+ - a place in Edmonton (example: Muttart Conservatory, Fort Edmonton
+Park, Royal Alberta Museum)
+ - a <div class="meta"> line
+ - at least TWO <span class="tag"> tags
+ -->
+                <article class="card">
+                    <h2>Muttart Conservatory: Glass Pyramids & Greenery</h2>
+                    <div class="meta">Best for: plant lovers · Time: 1–2 hours</div>
+                    <p>
+                        Explore themed biomes inside the iconic glass pyramids, with great views of the city skyline
+                        nearby.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Indoors</span>
+                        <span class="tag">Scenic</span>
+                    </div>
+                </article>
+
+                <!-- TODO (HTML #2):
+ Add another card at the bottom:
+ - heading and 2–3 sentences describing what the blog is about
+ -->
+                <article class="card">
+                    <h2>About This Blog</h2>
+                    <p>
+                        This Edmonton travel blog is a simple guide for short visits, highlighting easy itineraries,
+                        local spots,
+                        and practical tips for exploring the city without feeling overwhelmed.
+                    </p>
+                </article>
+
+
+            </section>
+            <aside class="sidebar">
+                <div class="card">
+                    <h3>Quick Plan (Half Day)</h3>
+                    <ul>
+                        <li>Start: River Valley viewpoint</li>
+                        <li>Lunch: Whyte Ave</li>
+                        <li>End: Museum or Conservatory</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Tips</h3>
+                    <ul>
+                        <li>Dress in layers</li>
+                        <li>Check hours before you go</li>
+                        <li>Bring a portable charger</li>
+                    </ul>
+                </div>
+                <!-- TODO (HTML #3):
+ Add one more sidebar card:
+ - Title: Getting Around
+ - List with 2/3 items (walk, transit, rideshare, etc.)
+ -->
+                <div class="card">
+                    <h3>Getting Around</h3>
+                    <ul>
+                        <li>Walkable areas in downtown and Whyte Ave</li>
+                        <li>ETS buses and LRT for longer distances</li>
+                        <li>Rideshare and taxis available city-wide</li>
+                    </ul>
+                </div>
+
+            </aside>
+        </main>
+        <footer class="site-footer">
+            <p>&copy; 2026 Edmonton Travel Blog (Lab Practice)</p>
+        </footer>
+    </div>
+</body>
+
+</html>

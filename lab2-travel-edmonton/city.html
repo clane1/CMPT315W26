@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edmonton Travel Blog | About the City</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- TODO (HTML #4):
+ HEADER SECTION (copy the same structure from index.html)
+ 1) Create a <header> with class="site-header"
+ 2) Add an <h1> for the site title: Edmonton Travel Blog
+ 3) Add a <p> that describes the current page (example: About the City)
+ 4) Add the navigation menu using <nav class="site-nav"> with a <ul> list
+ - Each menu item is a <li> containing an <a> link
+ - Use the SAME menu on every page for consistency
+ - Only change which link has class="active" (the current page)
+-->
+        <header class="site-header">
+            <h1>Edmonton Travel Blog</h1>
+            <p>About the City</p>
+            <!-- Navigation is a list; CSS will turn it into a nav bar -->
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="city.html">About the City</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="layout">
+            <section class="main">
+                <div class="card">
+                    <h2>Edmonton at a Glance</h2>
+                    <p>
+                        Edmonton is a vibrant city that combines natural scenery with urban
+                        attractions, making it a great destination for short trips or weekend travel. The
+                        river valley offers extensive trails and viewpoints that feel surprisingly close to
+                        downtown. The city also has lively neighbourhoods with local restaurants, cafés, and
+                        shops that are easy to explore on foot.
+                    </p>
+                    <h3>What Visitors Enjoy</h3>
+                    <!-- TODO (HTML #5):
+ Add a <ul> list with 4 items. -->
+                    <ul>
+                        <li>Walking and biking in the river valley</li>
+                        <li>Exploring local cafés and restaurants</li>
+                        <li>Attending festivals and seasonal events</li>
+                        <li>Visiting museums and galleries</li>
+                    </ul>
+
+
+                    <!-- TODO (HTML #6):
+ Create a header stating “Best Time to Visit” and Write 2–4 sentences.
+-->
+                    <h3>Best Time to Visit</h3>
+                    <p>
+                        Summer and early fall are ideal for visiting Edmonton, with long days and plenty of outdoor
+                        events.
+                        Winter can be very cold, but offers unique experiences like ice castles, skating, and winter
+                        festivals
+                        if you dress warmly and plan ahead.
+                    </p>
+
+
+                    <div class="tags">
+                        <span class="tag">Parks</span>
+                        <span class="tag">Festivals</span>
+                        <span class="tag">City life</span>
+                    </div>
+                </div>
+                <!-- TODO (HTML #7):
+ Add a second card titled “One-Day Itinerary”
+ containing an <ol> list with 4 steps.
+ -->
+                <div class="card">
+                    <h2>One-Day Itinerary</h2>
+                    <ol>
+                        <li>Morning: Walk in the river valley near downtown.</li>
+                        <li>Midday: Lunch and shopping along Whyte Avenue.</li>
+                        <li>Afternoon: Visit the Royal Alberta Museum or Muttart Conservatory.</li>
+                        <li>Evening: Relax at a café or viewpoint overlooking the city.</li>
+                    </ol>
+                </div>
+
+            </section>
+            <aside class="sidebar">
+                <div class="card">
+                    <h3>Student Practice Notes</h3>
+                    <ul>
+                        <li>This is a “static” informational page.</li>
+                        <li>Use headings and lists for readability.</li>
+                        <li>Do not copy articles from the internet.</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+        <footer class="site-footer">
+            <p>&copy; 2026 Edmonton Travel Blog (Lab Practice)</p>
+        </footer>
+    </div>
+</body>
+
+</html>

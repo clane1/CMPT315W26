@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edmonton Travel Blog | Video</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="site-header">
+            <h1>Edmonton Travel Blog</h1>
+            <p>Video highlight</p>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="city.html">About the City</a></li>
+                    <li><a class="active" href="video.html">Video</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="layout">
+            <section class="main">
+                <div class="card" id="featured-video">
+                    <h2>Edmonton Travel Video</h2>
+                    <!-- <p class="notice">
+ Replace <strong>VIDEO_ID_HERE</strong> with a real YouTube video ID.
+ Then provide attribution to the creator (Standard YouTube License).
+ </p> -->
+                    <div class="video-wrap">
+
+                        <!-- -- TODO (HTML #8):
+ Add a YouTube video using an <iframe> embed. Take the video ID from a
+normal YouTube link then place it into the embed format. For example, if the link is
+https://www.youtube.com/watch?v=EfJo3MHFkFI, the video ID is EfJo3MHFkFI, so your
+iframe src becomes https://www.youtube.com/embed/EfJo3MHFkFI. Keep the iframe
+attributes (title, allow, allowfullscreen) so the player works correctly. After the
+iframe, include attribution by writing the creator’s name and adding a working link
+to the video or creator’s channel; if the video cannot be embedded (it may say
+playback is disabled on other websites), choose a different YouTube video that
+allows embedding. -->
+                        <iframe src="https://www.youtube.com/embed/s4atgnBJk2Y" title="Edmonton Travel Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+                    <p class="meta">
+                        Video under Standard YouTube License.
+                        Attribution: <strong>Explore Edmonton</strong> (YouTube).
+                        Link: <a href="https://www.youtube.com/watch?v=s4atgnBJk2Y" target="_blank" rel="noopener">
+                            Watch on YouTube
+                        </a>
+                    </p>
+                    <!-- TODO (HTML #9):
+ 1) Replace Creator Name Here with the creator’s name.
+ 2) Replace # with the real URL (creator channel OR the video page).
+ -->
+                </div>
+            </section>
+            <aside class="sidebar">
+                <div class="card">
+                    <h3>How to find a Video ID</h3>
+                    <p>
+                        In a YouTube URL, the ID is usually after <strong>v=</strong>.
+                        Example: https://www.youtube.com/watch?v=<strong>VIDEO_ID</strong>
+                    </p>
+                </div>
+            </aside>
+        </main>
+        <footer class="site-footer">
+            <p>&copy; 2026 Edmonton Travel Blog (Lab Practice)</p>
+        </footer>
+    </div>
+</body>
+
+</html>
