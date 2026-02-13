@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Photo Club Registration</title>
+
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Join the Travel Photo Club</h1>
+</header>
+
+<main>
+
+  <!-- ========================= -->
+  <!--     FEATURED GALLERY     -->
+  <!-- ========================= -->
+  <section id="gallery">
+    <h2>Featured Shots</h2>
+
+    <div class="gallery-grid">
+
+      <!-- Thumbnail 1 -->
+      <div class="thumb" tabindex="0" data-city="Paris">
+        <img 
+          alt="Paris travel photo"
+          title="Photo by Unsplash photographer cyril mzn"
+          src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=120&dpr=1&h=200&auto=format&fit=crop&q=60&ixid=M3wxMjA3fDB8MXxzZWFyY2h8N3x8cGFyaXN8ZW58MHx8fHwxNzcwODk0NDk4fDA&ixlib=rb-4.1.0"
+        />
+      </div>
+
+      <!-- Thumbnail 2 -->
+      <div class="thumb" tabindex="0" data-city="Tokyo">
+        <img 
+          alt="Tokyo travel photo"
+          title="Photo by Unsplash photographer Jezael Melgoza"
+          src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+      </div>
+
+      <!-- Thumbnail 3 -->
+      <div class="thumb" tabindex="0" data-city="New York">
+        <img 
+          alt="New York travel photo"
+          title="Photo by Unsplash photographer Timo Wagner"
+          src="https://images.unsplash.com/photo-1541336032412-2048a678540d?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        />
+      </div>
+
+    </div>
+
+    <p id="image-caption">Click (or press Enter) to select.</p>
+  </section>
+
+  <!-- ========================= -->
+  <!--     REGISTRATION FORM     -->
+  <!-- ========================= -->
+  <section id="registration">
+    <h2>Member Sign Up</h2>
+
+    <form id="signup-form" novalidate>
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+        <span class="error-msg" id="error-username"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <span class="error-msg" id="error-email"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <span class="error-msg" id="error-password"></span>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="terms"> I agree to the terms
+        </label>
+        <span class="error-msg" id="error-terms"></span>
+      </div>
+
+      <button type="submit">Register Now</button>
+    </form>
+
+    <p id="success-message" style="color: green; font-weight: bold;"></p>
+
+  </section>
+</main>
+
+<!-- Link to JS file -->
+<script src="script.js"></script>
+
+</body>
+</html>
