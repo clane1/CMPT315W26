@@ -175,6 +175,36 @@
 <script>
 /*
   ======================================================
+  CMPT 315 — Lab 6 Short‑Answer Questions
+  ======================================================
+
+  1. Why do we need async/await when using fetch()?
+     fetch() is asynchronous, meaning it returns a Promise that resolves later when the network request finishes. 
+     Using async/await lets the code pause until the response arrives, which makes the logic easier to read and 
+     avoids deeply nested .then() chains. It also allows us to handle errors with try/catch in a clean, predictable way.
+
+  2. What does OpenTDB response_code mean in your implementation? Explain 0 and 5.
+     response_code tells us whether the API successfully returned questions. 
+     A value of 0 means success and the results array contains valid questions. 
+     A value of 5 means the token has hit a rate limit or is empty, so the API refuses to 
+     return questions and we must show an error to the user.
+
+  3. What exactly is stored under STORAGE_KEY and why is JSON used?
+     STORAGE_KEY stores an object containing bestScore, bestTotal, and attempts so the 
+     user’s best performance persists across refreshes. 
+     JSON is used because localStorage only stores strings, 
+     so JSON.stringify converts the object into a string and JSON.parse converts it back into an object when loading.
+
+  4. Describe what happens from clicking Start Quiz until the first question is displayed.
+     When Start Quiz is clicked, validateStartForm() checks the inputs and stops if invalid. 
+     If valid, startFromForm() copies the player’s settings and runRoundFlow() begins the round. 
+     The app sets ROUND.difficulty, fetches a token if needed, fetches questions from OpenTDB, 
+     normalizes and shuffles them, hides the loading box, and finally calls renderQuestion() to display the first question.
+*/
+
+  
+/*
+  ======================================================
   LAB 6 — TRIVIA CHALLENGE 
   ======================================================
 
